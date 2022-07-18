@@ -81,6 +81,7 @@ async function buyma() {
         console.log('데이터 크롤링 종료.');
 
         console.log('otherSeller테이블의 데이터 upsert시작.');
+        // 중복제거
         let deduplicationTotalSellers = totalSellers.filter(
           (arr, index, callback) =>
             index === callback.findIndex((t) => t.buymaUserName === arr.buymaUserName),
